@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 module.exports = {
 	cooldown: 5,
@@ -6,6 +6,18 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Replies with Pong!'),
 	async execute(interaction) {
-		await interaction.reply('Pong!');
+		const ping = new ButtonBuilder()
+			.setCustomId('Ping!')
+			.setLabel('Ping!')
+			.setStyle(ButtonStyle.Primary);
+		const stop = new ButtonBuilder()
+			.setCustomId('Stop!')
+			.setLabel('Stop!')
+			.setStyle(ButtonStyle.Danger);
+		const row = new ActionRowBuilder().addComponents(ping, stop);
+		await interaction.reply({
+			content: 'Pong!',
+			components: [row],
+		});
 	},
 };
