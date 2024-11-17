@@ -14,6 +14,13 @@ module.exports = {
 					console.error(`No command matching ${interaction.commandName} was found.`);
 				}
 				break;
+			case 'selectDonation':
+				if (interaction.values[0] === 'S$3.00') {
+					interaction.reply({files: ['../Genosis/public/static/images/paynow3.png'], ephemeral: true});
+				} else if (interaction.values[0] === 'S$5.00') {
+					interaction.reply({files: ['../Genosis/public/static/images/paynow5.png'], ephemeral: true});
+				}
+				break;
 		}
 
 		if (!interaction.isChatInputCommand()) return;

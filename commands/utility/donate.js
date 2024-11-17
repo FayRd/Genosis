@@ -7,7 +7,7 @@ module.exports = {
         .setDescription('Donate to support me!'),
     async execute(interaction) {
         const select = new StringSelectMenuBuilder()
-            .setCustomId('Select')
+            .setCustomId('selectDonation')
             .setPlaceholder('Choose donation amount!')
             .addOptions(
                 new StringSelectMenuOptionBuilder()
@@ -19,10 +19,6 @@ module.exports = {
                     .setDescription('Buy me a mac & cheese!')
                     .setValue('S$5.00'),
             );
-        const cancel = new ButtonBuilder()
-            .setCustomId('Cancel')
-            .setLabel('Cancel')
-            .setStyle(ButtonStyle.Danger);
         const row = new ActionRowBuilder().addComponents(select);
         const primaryEmbed = new EmbedBuilder()
             .setColor("#e6a7b2")
