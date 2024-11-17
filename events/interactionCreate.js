@@ -1,4 +1,5 @@
 const { Events, Collection } = require('discord.js');
+const path = require('node:path');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -16,9 +17,9 @@ module.exports = {
 				break;
 			case 'selectDonation':
 				if (interaction.values[0] === 'S$3.00') {
-					interaction.reply({files: ['../Genosis/public/static/images/paynow3.png'], ephemeral: true});
+					interaction.reply({content: 'Thank you for your donation!', files: [path.join(__dirname, '../static/images/paynow3.png')], ephemeral: true});
 				} else if (interaction.values[0] === 'S$5.00') {
-					interaction.reply({files: ['../Genosis/public/static/images/paynow5.png'], ephemeral: true});
+					interaction.reply({content: 'Thank you for your donation!', files: [path.join(__dirname, '../static/images/paynow5.png')], ephemeral: true});
 				}
 				break;
 		}
