@@ -10,7 +10,7 @@ Proposed functions:
   - Clock Reminder (/resumeReminder, /pauseReminder)
     - Joins specific VC and plays bell sounds for 10 seconds.
   - Scheduled/Non-schedule voting modal (/startVote, /startSheduledVote)
-    =  Direct messages to the subscribed recipients.
+    - Direct messages to the subscribed recipients.
   - Lethal company game summary (/startLC, /endLC, /historyLC)
     - Total server uptime
     - Players joined
