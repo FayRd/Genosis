@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, } = require('discord.js');
 
 module.exports = {
     cooldown: 5,
@@ -23,7 +23,7 @@ module.exports = {
         const primaryEmbed = new EmbedBuilder()
             .setColor("#e6a7b2")
             .setTitle('Donate me!')
-            .setDescription('Kindly support me through donations!')
+            .setDescription('Kindly support me through donations! Maintaining the bot takes time and patience, and it costs money to host it. :heart:')
             .setThumbnail(interaction.client.user.displayAvatarURL({ size: 64 }))
             .setTimestamp()
             .setFooter({ text: 'Powered by RΞSSIФИ\'s love', iconURL: 'https://imgur.com/E2apyia.png' });
