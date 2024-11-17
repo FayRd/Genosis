@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     cooldown: 5,
@@ -16,7 +16,7 @@ module.exports = {
         .addBooleanOption(option =>
             option.setName('ephemeral')
                 .setDescription('Whether or not the echo should be ephemeral')),
-    async execute(interaction, options) {
+    async execute(interaction) {
         const minValue = interaction.options.getInteger('min_value');
         const maxValue = interaction.options.getInteger('max_value');
         const randomEphemeral = interaction.options.getBoolean('ephemeral');
